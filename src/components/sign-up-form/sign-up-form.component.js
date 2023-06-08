@@ -6,6 +6,7 @@ import './sign-up-fotm.style.scss'
 import Button from "../button/button.component";
 
 
+
 const defaultFormFields = {
     displayName: '',
     email: '',
@@ -20,7 +21,12 @@ const SignUpForm = () => {
     const [formFields,setFormFields] = useState(defaultFormFields);
     const {displayName,email,password,confirmPassword} = formFields;
 
-    console.log(formFields);
+
+    // const val = useContext(UserContext)
+
+    // console.log("hit");
+
+    // console.log(formFields);
 
     const resetFromFields = () => {
         setFormFields(defaultFormFields)
@@ -35,7 +41,8 @@ const SignUpForm = () => {
         }
 
         try{
-            const {user} = await createAuthUserWithEmailAndPassword(email,password)
+            const {user} = await createAuthUserWithEmailAndPassword(email,password);
+
 
             await createUserDocumentFromAuth(user, {displayName})
             resetFromFields();
