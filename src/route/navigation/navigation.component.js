@@ -42,7 +42,7 @@ const Navigation = () => {
             
              <CartIcon/>
             
-            
+             
           </div>
           {isCartOpen && <CartDropdown/>}
          
